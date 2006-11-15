@@ -1,0 +1,132 @@
+/**
+ * TODO
+ * @author:     Michael Klier <chi@chimeric.de>
+ * @homepage:   http://www.chimeric.de
+ */
+
+body {
+  background: __white__ url(images/dwbg.jpg) repeat-x top left;
+}
+
+div.dokuwiki {
+  font-family: sans-serif;
+}
+
+div.dokuwiki div#monobook_container {
+  margin-left: 170px;
+  margin-right: 5px;
+}
+
+/* -------------- sidebar ------------------------- */
+
+div.dokuwiki div#sidebar {
+  float: left;
+  width: 160px;
+}
+
+div.dokuwiki div#sidebar .box {
+  border: 1px solid __border__;
+  border-left: none;
+  margin-bottom: 0.5em;
+  padding-left: 0.3em;
+  padding-top: 0.3em;
+  background: __background__;
+}
+
+div.dokuwiki div#sidebar img.logo {
+  margin:0;
+  padding:0;
+  float: none;
+  margin: 10px;
+}
+
+div.dokuwiki div#sidebar .sb_label {
+  padding-left: 0.4em;
+  font-size: 90%;
+}
+
+div.dokuwiki div#sidebar div#toolbox {
+  padding-bottom: 0.3em;
+}
+
+div.dokuwiki div#sidebar div#search {
+  font-size: 100%;
+  border: 1px solid __border__;
+  border-left: none;
+  margin-bottom: 0.5em;
+  background: __background__;
+  padding-left: 0.4em;
+}
+
+div.dokuwiki div#sidebar div#login div.user {
+  font-size: 40%;
+}
+
+div.dokuwiki div#sidebar a.action {
+  display: block;
+  background: url(images/bullet.gif) no-repeat;
+  padding-left: 12px;
+  padding-top: 1px;
+  height: 16px;
+  margin-left: 0.4em;
+}
+
+div.dokuwiki div#sidebar .button {
+  float: none;
+  margin: 0.4em;
+  margin-left: 62px;
+}
+
+div.dokuwiki div#sidebar h1,
+div.dokuwiki div#sidebar h2,
+div.dokuwiki div#sidebar h3,
+div.dokuwiki div#sidebar h4,
+div.dokuwiki div#sidebar h5 {
+  font-size: 80%;
+  border: none;
+}
+
+/* the document */
+div.dokuwiki div.page {
+  float: left;
+  margin: 0;
+  border: 1px solid __border__;
+  padding: 1em;
+  background: __background__;
+  width: 96.5%;
+}
+
+/* -------------- search -------------------------- */
+
+div.dokuwiki form#dw__search input.button {
+  display: none;
+}
+
+div.dokuwiki form#dw__search input.edit {
+  width: 142px;
+}
+
+
+/* ---------- table of contents ------------------- */
+
+div.dokuwiki div.toc {
+  margin-top: 1.8em;
+}
+
+/* ---------- AJAX quicksearch ----------- */
+
+div.dokuwiki div.ajax_qsearch {
+  left: 0.6em;
+}
+
+/* ------------------ Additional ---------------------- */
+
+div.dokuwiki div.footerinc {
+  padding: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border-top: 1px solid __border__;
+  border-bottom: 1px solid __border__;
+  background: __background__;
+}
+

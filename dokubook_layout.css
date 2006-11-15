@@ -1,0 +1,60 @@
+/**
+ * additional layout for monobook light
+ *
+ * @author:     Michael Klier <chi@chimeric.de>
+ * @homepage:   http://www.chimeric.de
+ */
+
+div.dokuwiki div.stylehead {
+  float: left;
+}
+
+div.dokuwiki div.header {
+  height: 25px;
+}
+
+div.dokuwiki div.header a.login,
+div.dokuwiki div.header a.logout {
+  padding-right: 1.4em;
+  padding-left: 16px;
+  margin-left: 0.5em;
+  background: url(images/user.gif) no-repeat;
+}
+
+div.dokuwiki div#bar__top a.action {
+  font-size: 80%;
+  line-height: 100%;
+  border: 1px solid __border__;
+  text-decoration: none;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 15px;
+  background: __background__;
+  display: block;
+  float: left;
+  position: relative;
+  top: +1px !important;
+  top: +6px;
+}
+
+div.dokuwiki a.top {
+  float: right;
+  display: inline;
+}
+
+div.dokuwiki div.header div.meta {
+  float: right;
+}
+
+div.dokuwiki .page div.meta {
+  padding-top: 1em;
+}
+
+div.dokuwiki div.user {
+  float: none;
+}
+
+div.dokuwiki div.doc {
+  float: left;
+}
