@@ -62,7 +62,7 @@ require_once(DOKU_TPLINC.'tpl_functions.php');
     <?php tpl_sidebar()?>
   </div>
 
-  <div id="monobook_container">
+  <div id="dokubook_container">
 
     <div class="stylehead">
 

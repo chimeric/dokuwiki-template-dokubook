@@ -12,7 +12,7 @@ div.dokuwiki {
   font-family: sans-serif;
 }
 
-div.dokuwiki div#monobook_container {
+div.dokuwiki div#dokubook_container {
   margin-left: 170px;
   margin-right: 5px;
 }
@@ -94,6 +94,10 @@ div.dokuwiki div.page {
   padding: 1em;
   background: __background__;
   width: 96.5%;
+}
+
+div.dokuwiki div.breadcrumbs {
+  margin-bottom: 1em;
 }
 
 /* -------------- search -------------------------- */
