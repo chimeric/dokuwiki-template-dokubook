@@ -49,8 +49,8 @@ function tpl_sidebar() {
     // main navigation
     print '<span class="sb_label">' . $lang['navigation'] . '</span>' . DW_LF;
     print '<div id="navigation" class="box">' . DW_LF;
-    if(@file_exists(wikiFN(':navigation'))) {
-        print p_sidebar_xhtml(':navigation');
+    if(@file_exists(wikiFN('navigation'))) {
+        print p_sidebar_xhtml('navigation');
     } else {
         print html_index(cleanID($ID));
     }  
