@@ -27,6 +27,7 @@ function tpl_logo() {
     $out .= '  <img class="logo" src="';
     
     if(@file_exists(DOKU_TPLINC.'images/logo.jpg')) {
+        $out .= DOKU_TPL . 'images/logo.jpg';
     } else {
         $out .= DOKU_TPL . 'images/dokuwiki-128.png';
     }
