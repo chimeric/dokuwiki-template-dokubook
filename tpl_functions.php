@@ -1,12 +1,14 @@
 <?php
 /**
- * TODO
+ * template functions for dokubook template
  * 
  * @license:    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * @author:     Michael Klier <chi@chimeric.de>
  */
+
 if(!defined('DW_LF')) define('DW_LF',"\n");
 
+// load language files
 require_once(DOKU_TPLINC.'lang/en/lang.php');
 if(@file_exists(DOKU_TPLINC.'lang/'.$conf['lang'].'/lang.php')) {
     require_once(DOKU_TPLINC.'lang/'.$conf['lang'].'/lang.php');
@@ -23,16 +25,23 @@ function tpl_logo() {
     
     $out = '';
 
-    $out .= '<a href="' . DOKU_SCRIPT . '" name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[ALT+H]">';
-    $out .= '  <img class="logo" src="';
-    
-    if(@file_exists(DOKU_TPLINC.'images/logo.jpg')) {
-        $out .= DOKU_TPL . 'images/logo.jpg';
-    } else {
-        $out .= DOKU_TPL . 'images/dokuwiki-128.png';
+    switch(true) {
+        case(@file_exists(DOKU_TPLINC.'images/logo.jpg')):
+            $logo = DOKU_TPL.'images/logo.jpg';
+            break;
+        case(@file_exists(DOKU_TPLINC.'images/logo.jpeg')):
+            $logo = DOKU_TPL.'images/logo.jpeg';
+            break;
+        case(@file_exists(DOKU_TPLINC.'images/logo.png')):
+            $logo = DOKU_TPL.'images/logo.png';
+            break;
+        default:
+            $logo = DOKU_TPL.'images/dokuwiki-128.png';
+            break;
     }
 
-    $out .= '" alt="' . $conf['title'] . '" /></a>' . DW_LF;
+    $out .= '<a href="' . DOKU_BASE . '" name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[ALT+H]">';
+    $out .= '  <img class="logo" src="' . $logo . '" alt="' . $conf['title'] . '" /></a>' . DW_LF;
 
     print ($out);
 }
