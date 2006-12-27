@@ -73,8 +73,9 @@ div.dokuwiki div#sidebar a.action {
 
 div.dokuwiki div#sidebar .button {
   float: none;
-  margin: 0.4em;
-  margin-left: 62px;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  margin-left: 0.1em;
 }
 
 div.dokuwiki div#sidebar h1,
