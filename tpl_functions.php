@@ -55,14 +55,30 @@ function tpl_sidebar() {
     global $lang;
     global $ID;
 
+    $svID  = cleanID($ID);
+    $navpn = tpl_getConf('pagename');
+    $path   = explode(':',$svID);
+    $found  = false;
+    $sb     = '';
+
     // main navigation
     print '<span class="sb_label">' . $lang['navigation'] . '</span>' . DW_LF;
     print '<div id="navigation" class="box">' . DW_LF;
-    if(@file_exists(wikiFN('navigation'))) {
-        print p_sidebar_xhtml('navigation');
+
+    while(!$found && count($path) > 0) {
+        $sb = implode(':', $path) . ':' . $navpn;
+        $found =  @file_exists(wikiFN($sb));
+        array_pop($path);
+    }
+
+    if($found && auth_quickaclcheck($sb) >= AUTH_READ) {
+        print p_sidebar_xhtml($sb);
+    } elseif(@file_exists(wikiFN($navpn))) {
+        print p_sidebar_xhtml($navpn);
     } else {
-        print html_index(cleanID($ID));
-    }  
+        print html_index(cleanID($svID));
+    }
+
     print '</div>' . DW_LF;
 
     // generate the searchbox
