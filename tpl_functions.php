@@ -63,7 +63,7 @@ function tpl_sidebar() {
 
     // main navigation
     print '<span class="sb_label">' . $lang['navigation'] . '</span>' . DW_LF;
-    print '<div id="navigation" class="box">' . DW_LF;
+    print '<div id="navigation" class="sidebar_box">' . DW_LF;
 
     while(!$found && count($path) > 0) {
         $sb = implode(':', $path) . ':' . $navpn;
@@ -89,7 +89,7 @@ function tpl_sidebar() {
 
     // generate the toolbox
     print '<span class="sb_label">' . $lang['toolbox'] . '</span>' . DW_LF;
-    print '<div id="toolbox" class="box">' . DW_LF;
+    print '<div id="toolbox" class="sidebar_box">' . DW_LF;
     tpl_actionlink('admin');
     tpl_actionlink('index');
     tpl_actionlink('recent');

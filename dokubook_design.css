@@ -24,7 +24,7 @@ div.dokuwiki div#sidebar {
   width: 160px;
 }
 
-div.dokuwiki div#sidebar .box {
+div.dokuwiki div#sidebar .sidebar_box {
   border: 1px solid __border__;
   border-left: none;
   margin-bottom: 0.5em;
