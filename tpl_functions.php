@@ -57,9 +57,9 @@ function tpl_sidebar() {
 
     $svID  = cleanID($ID);
     $navpn = tpl_getConf('pagename');
-    $path   = explode(':',$svID);
-    $found  = false;
-    $sb     = '';
+    $path  = explode(':',$svID);
+    $found = false;
+    $sb    = '';
 
     // main navigation
     print '<span class="sb_label">' . $lang['navigation'] . '</span>' . DW_LF;
@@ -71,10 +71,10 @@ function tpl_sidebar() {
         array_pop($path);
     }
 
-    if($found && auth_quickaclcheck($sb) >= AUTH_READ) {
+    if(!$found && @file_exists(wikiFN($navpn))) $sb = $navpn;
+
+    if($sb && auth_quickaclcheck($sb) >= AUTH_READ) {
         print p_sidebar_xhtml($sb);
-    } elseif(@file_exists(wikiFN($navpn))) {
-        print p_sidebar_xhtml($navpn);
     } else {
         print html_index(cleanID($svID));
     }
@@ -104,10 +104,10 @@ function tpl_sidebar() {
  * 
  * @author Michael Klier <chi@chimeric.de>
  */
-function p_sidebar_xhtml($Sb) {
-    $data = p_wiki_xhtml($Sb,'',false);
-    if(auth_quickaclcheck($Sb) >= AUTH_EDIT) {
-        $data .= '<div class="secedit">' . html_btn('secedit',$Sb,'',array('do'=>'edit','rev'=>'','post')) . '</div>';
+function p_sidebar_xhtml($sb) {
+    $data = p_wiki_xhtml($sb,'',false);
+    if(auth_quickaclcheck($sb) >= AUTH_EDIT) {
+        $data .= '<div class="secedit">' . html_btn('secedit',$sb,'',array('do'=>'edit','rev'=>'','post')) . '</div>';
     }
     return preg_replace('/<div class="toc">.*?(<\/div>\n<\/div>)/s', '', $data);
 }
