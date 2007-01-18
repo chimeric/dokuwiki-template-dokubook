@@ -54,12 +54,21 @@ function tpl_logo() {
 function tpl_sidebar() {
     global $lang;
     global $ID;
+    global $INFO;
 
     $svID  = cleanID($ID);
     $navpn = tpl_getConf('pagename');
     $path  = explode(':',$svID);
     $found = false;
     $sb    = '';
+
+    if(tpl_getConf('closedwiki') && empty($INFO['userinfo'])) {
+        print '<span class="sb_label">' . $lang['toolbox'] . '</span>' . DW_LF;
+        print '<div id="toolbox" class="sidebar_box">' . DW_LF;
+        tpl_actionlink('login');
+        print '</div>' . DW_LF;
+        return;
+    }
 
     // main navigation
     print '<span class="sb_label">' . $lang['navigation'] . '</span>' . DW_LF;
