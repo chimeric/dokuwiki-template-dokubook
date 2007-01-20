@@ -70,7 +70,7 @@ require_once(DOKU_TPLINC.'tpl_functions.php');
         <?php /*old includehook*/ @include(dirname(__FILE__).'/pageheader.html')?>
         <?php /*old includehook*/ @include(dirname(__FILE__).'/header.html')?>
         <div class="logo">
-          <?php tpl_link(wl(),$conf['title'],'name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[ALT+H]"')?>
+          <?php tpl_link(wl(),$conf['title'],'name="dokuwiki__top" accesskey="h" title="[ALT+H]"')?>
         </div>
       </div>
 
