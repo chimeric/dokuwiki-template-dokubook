@@ -82,7 +82,7 @@ function tpl_sidebar() {
 
     if(!$found && @file_exists(wikiFN($navpn))) $sb = $navpn;
 
-    if($sb && auth_quickaclcheck($sb) >= AUTH_READ) {
+    if(@file_exists(wikiFN($sb)) && auth_quickaclcheck($sb) >= AUTH_READ) {
         print p_sidebar_xhtml($sb);
     } else {
         print html_index(cleanID($svID));
