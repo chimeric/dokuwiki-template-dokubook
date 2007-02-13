@@ -135,3 +135,9 @@ div.dokuwiki div.footerinc {
   background: __background__;
 }
 
+/* damn fix for IE6 */
+div.dokuwiki pre.file,
+div.dokuwiki pre.code {
+  width: auto !important;
+  width: 96%;
+}
