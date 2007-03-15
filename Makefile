@@ -1,4 +1,4 @@
-# Makefile for DokuWiki Template Simple
+# Makefile for DokuWiki Template Dokubook
 #
 # @author Michael Klier <chi@chimeric.de>
 
