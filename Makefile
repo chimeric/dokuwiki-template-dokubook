@@ -15,6 +15,7 @@ DOCS=$(DIST_DIR)/README \
 # {{{ CSS
 CSS=$(DIST_DIR)/dokubook_design.css \
 	$(DIST_DIR)/dokubook_layout.css \
+	$(DIST_DIR)/dokubook_print.css \
 	$(DIST_DIR)/design.css \
 	$(DIST_DIR)/layout.css \
 	$(DIST_DIR)/media.css \
