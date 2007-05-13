@@ -16,6 +16,7 @@ media.css      = screen
 
 rtl.css        = rtl
 print.css      = print
+dokubook_print.css = print
 
 ; This section is used to configure some placeholder values used in
 ; the stylesheets. Changing this file is the simplest method to
