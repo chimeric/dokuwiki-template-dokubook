@@ -46,7 +46,7 @@ require_once(DOKU_TPLINC.'tpl_functions.php');
     <?php } ?>
     {
       border-color: #fabd23;
-      border-bottom: 1px solid #fff;
+      border-bottom: 2px solid #fff;
       font-weight: bold;
     }
   </style>
@@ -65,7 +65,6 @@ require_once(DOKU_TPLINC.'tpl_functions.php');
   <div id="dokubook_container">
 
     <div class="stylehead">
-
       <div class="header">
         <?php /*old includehook*/ @include(dirname(__FILE__).'/pageheader.html')?>
         <?php /*old includehook*/ @include(dirname(__FILE__).'/header.html')?>
@@ -73,7 +72,6 @@ require_once(DOKU_TPLINC.'tpl_functions.php');
           <?php tpl_link(wl(),$conf['title'],'name="dokuwiki__top" accesskey="h" title="[ALT+H]"')?>
         </div>
       </div>
-
       <div id="bar__top">
         <?php tpl_actionlink('edit')?>
         <?php tpl_actionlink('history')?>

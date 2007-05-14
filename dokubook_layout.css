@@ -9,8 +9,11 @@ div.dokuwiki div.stylehead {
   float: left;
 }
 
-div.dokuwiki div.header {
-  height: 25px;
+div.dokuwiki div.header .logo {
+  float: none;
+  position: absolute;
+  right: 0.4em;
+  top: 0.3em;
 }
 
 div.dokuwiki div.header a.login,
@@ -21,21 +24,23 @@ div.dokuwiki div.header a.logout {
   background: url(images/user.gif) no-repeat;
 }
 
+div.dokuwiki div#bar__top {
+  position: absolute;
+  top: 24px;
+  height: 25px;
+}
+
 div.dokuwiki div#bar__top a.action {
-  font-size: 80%;
-  line-height: 100%;
+  font-size: 0.8125em;
   border: 1px solid __border__;
   text-decoration: none;
   padding: 3px;
   padding-left: 10px;
-  padding-right: 10px;
+  padding-right: 4px;
   margin-left: 15px;
-  background: __background__;
-  display: block;
+  padding-bottom: 2px;
   float: left;
-  position: relative;
-  top: +1px !important;
-  top: +6px;
+  z-index: 100;
 }
 
 div.dokuwiki a.top {

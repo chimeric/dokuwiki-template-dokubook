@@ -61,7 +61,18 @@ IMAGES=$(DIST_DIR)/images/bullet.gif \
 	   $(DIST_DIR)/images/open.gif \
 	   $(DIST_DIR)/images/tocdot2.gif \
 	   $(DIST_DIR)/images/user.gif \
-	   $(DIST_DIR)/images/windows.gif
+	   $(DIST_DIR)/images/windows.gif \
+	   $(DIST_DIR)/images/tool-admin.png \
+	   $(DIST_DIR)/images/tool-backlink.png \
+	   $(DIST_DIR)/images/tool-edit.png \
+	   $(DIST_DIR)/images/tool-index.png \
+	   $(DIST_DIR)/images/tool-login.png \
+	   $(DIST_DIR)/images/tool-logout.png \
+	   $(DIST_DIR)/images/tool-profile.png \
+	   $(DIST_DIR)/images/tool-recent.png \
+	   $(DIST_DIR)/images/tool-revisions.png \
+	   $(DIST_DIR)/images/tool-source.png \
+	   $(DIST_DIR)/images/tool-subscribe.png
 # }}}
 
 # {{{ CONF
