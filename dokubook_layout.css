@@ -34,11 +34,8 @@ div.dokuwiki div#bar__top a.action {
   font-size: 0.8125em;
   border: 1px solid __border__;
   text-decoration: none;
-  padding: 3px;
-  padding-left: 10px;
-  padding-right: 4px;
   margin-left: 15px;
-  padding-bottom: 2px;
+  padding: 3px 4px 2px 10px;
   float: left;
   z-index: 100;
 }

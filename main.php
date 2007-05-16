@@ -37,12 +37,12 @@ require_once(DOKU_TPLINC.'tpl_functions.php');
 
   <!-- change link borders dynamically -->
   <style type="text/css">
-    <?php if($_REQUEST['do'] == 'show' || $_REQUEST['do'] == 'edit') { ?>
+    <?php if($ACT == 'show' || $ACT == 'edit') { ?>
     div.dokuwiki div#bar__top a.edit,
     div.dokuwiki div#bar__top a.show,
     div.dokuwiki div#bar__top a.source
     <?php } else { ?>
-    div.dokuwiki div#bar__top a.<?php echo $_REQUEST['do'];?>
+    div.dokuwiki div#bar__top a.<?php echo $ACT;?>
     <?php } ?>
     {
       border-color: #fabd23;
