@@ -118,5 +118,9 @@ function p_sidebar_xhtml($sb) {
     if(auth_quickaclcheck($sb) >= AUTH_EDIT) {
         $data .= '<div class="secedit">' . html_btn('secedit',$sb,'',array('do'=>'edit','rev'=>'','post')) . '</div>';
     }
-    return preg_replace('/<div class="toc">.*?(<\/div>\n<\/div>)/s', '', $data);
+    // strip TOC
+    $data = preg_replace('/<div class="toc">.*?(<\/div>\n<\/div>)/s', '', $data);
+    // replace headline ids for XHTML compliance
+    $data = preg_replace('/(<h.*?><a.*?id=")(.*?)(">.*?<\/a><\/h.*?>)/','\1sb_'.$pos.'_\2\3', $data);
+    return ($data);
 }
