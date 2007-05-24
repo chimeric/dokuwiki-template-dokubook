@@ -92,7 +92,7 @@ div.dokuwiki div#sidebar h5 {
 /* the document */
 div.dokuwiki div.page {
   float: left;
-  margin: -2px 0 0 0;
+  margin: 0;
   border: 1px solid __border__;
   padding: 1em;
   background: __background__;
