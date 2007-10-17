@@ -38,11 +38,11 @@ require_once(DOKU_TPLINC.'tpl_functions.php');
   <!-- change link borders dynamically -->
   <style type="text/css">
     <?php if($ACT == 'show' || $ACT == 'edit') { ?>
-    div.dokuwiki div#bar__top a.edit,
-    div.dokuwiki div#bar__top a.show,
-    div.dokuwiki div#bar__top a.source
+    div.dokuwiki ul#top__nav a.edit,
+    div.dokuwiki ul#top__nav a.show,
+    div.dokuwiki ul#top__nav a.source
     <?php } else { ?>
-    div.dokuwiki div#bar__top a.<?php echo $ACT;?>
+    div.dokuwiki ul#top__nav a.<?php echo $ACT;?>
     <?php } ?>
     {
       border-color: #fabd23;
@@ -65,6 +65,7 @@ require_once(DOKU_TPLINC.'tpl_functions.php');
   <div id="dokubook_container">
 
     <div class="stylehead">
+
       <div class="header">
         <?php /*old includehook*/ @include(dirname(__FILE__).'/pageheader.html')?>
         <?php /*old includehook*/ @include(dirname(__FILE__).'/header.html')?>
@@ -72,11 +73,12 @@ require_once(DOKU_TPLINC.'tpl_functions.php');
           <?php tpl_link(wl(),$conf['title'],'name="dokuwiki__top" accesskey="h" title="[ALT+H]"')?>
         </div>
       </div>
-      <div id="bar__top">
-        <?php tpl_actionlink('edit')?>
-        <?php tpl_actionlink('history')?>
-        <?php tpl_actionlink('subscribe')?>
-      </div>
+
+      <ul id="top__nav">
+        <li><?php tpl_actionlink('edit')?></li>
+        <li><?php tpl_actionlink('history')?></li>
+        <li><?php tpl_actionlink('subscribe')?></li>
+      </ul>
 
       <div class="clearer"></div>
 
@@ -102,7 +104,6 @@ require_once(DOKU_TPLINC.'tpl_functions.php');
       <?php tpl_content()?>
       <!-- wikipage stop -->
 
-
       <div class="meta">
         <div class="doc">
           <?php tpl_pageinfo()?>
@@ -121,9 +122,10 @@ require_once(DOKU_TPLINC.'tpl_functions.php');
       <?php /*old includehook*/ @include(dirname(__FILE__).'/pagefooter.html')?>
     </div>
 
+    <?php /*old includehook*/ @include(dirname(__FILE__).'/footer.html')?>
+
   </div>
 
-<?php /*old includehook*/ @include(dirname(__FILE__).'/footer.html')?>
 </div>
 <div class="no"><?php /* provide DokuWiki housekeeping, required in all templates */ tpl_indexerWebBug()?></div>
 </body>

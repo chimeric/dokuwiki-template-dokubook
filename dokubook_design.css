@@ -14,16 +14,76 @@ div.dokuwiki {
 }
 
 div.dokuwiki div#dokubook_container {
-  margin-left: 170px;
   padding-bottom: 0.8em;
-  padding-top: 45px;
+  padding-top: 50px;
+  padding-right: 1em;
+  position: absolute;
+  left: 170px;
+  right: 10px;
+}
+
+/* -------------- navigation ---------------------- */
+
+div.dokuwiki ul#top__nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  position: absolute;
+  top: 34px !important;
+  top: 71px;
+  left: 10px;
+}
+
+div.dokuwiki ul#top__nav li {
+  margin: 0;
+  margin-right: 0.5em;
+  float: left;
+  padding: 0;
+}
+
+div.dokuwiki ul#top__nav li a {
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  border-top: 1px solid __border__;
+  border-left: 1px solid __border__;
+  border-right: 1px solid __border__;
+  padding-bottom: 0;
+  margin: 0;
+  height: 18px;
+  float: left;
+}
+
+div.dokuwiki ul#top__nav a.create,
+div.dokuwiki ul#top__nav a.edit {
+  background: __background__ url(images/tool-edit.png) 2px 1px no-repeat;
+  padding-left: 20px;
+}
+
+div.dokuwiki ul#top__nav a.revisions {
+  background: __background__ url(images/tool-revisions.png) 2px 1px no-repeat;
+  padding-left:20px;
+}
+
+div.dokuwiki ul#top__nav a.subscribe,
+div.dokuwiki ul#top__nav a.unsubscribe {
+  background: __background__ url(images/tool-subscribe.png) 2px 2px no-repeat;
+  padding-left: 20px;
+}
+
+div.dokuwiki ul#top__nav a.source,
+div.dokuwiki ul#top__nav a.show {
+  background: __background__ url(images/tool-source.png) 2px 2px no-repeat;
+  padding-left: 20px;
 }
 
 /* -------------- sidebar ------------------------- */
 
 div.dokuwiki div#sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 160px;
-  float: left;
 }
 
 div.dokuwiki div#sidebar .sidebar_box {
@@ -45,10 +105,6 @@ div.dokuwiki div#sidebar img.logo {
 div.dokuwiki div#sidebar .sb_label {
   padding-left: 0.4em;
   font-size: 90%;
-}
-
-div.dokuwiki div#sidebar div#toolbox {
-  padding-bottom: 0.3em;
 }
 
 div.dokuwiki div#sidebar div#search {
@@ -91,12 +147,10 @@ div.dokuwiki div#sidebar h5 {
 
 /* the document */
 div.dokuwiki div.page {
-  float: left;
   margin: 0;
   border: 1px solid __border__;
   padding: 1em;
   background: __background__;
-  width: 96.5%;
 }
 
 div.dokuwiki div.breadcrumbs {
@@ -115,35 +169,32 @@ div.dokuwiki form#dw__search input.edit {
 
 /* ---------- table of contents ------------------- */
 div.dokuwiki div.toc {
-  margin-top: 1em;
+  margin-top: 13px;
 }
 
-/* ---------- AJAX quicksearch ----------- */
+/* ---------- AJAX quicksearch -------------------- */
 div.dokuwiki div.ajax_qsearch {
   left: 0.6em;
 }
 
-/* --------------- Additional ---------------------- */
+/* --------------- additional --------------------- */
 div.dokuwiki div.footerinc {
   padding: 1em;
   margin-bottom: 1em;
-  border-top: 1px solid __border__;
-  border-bottom: 1px solid __border__;
+  margin-top: 1em;
+  border: 1px solid __border__;
+  border: 1px solid __border__;
   background: __background__;
 }
 
-/* damn fix for IE6 */
-div.dokuwiki pre.file,
-div.dokuwiki pre.code {
-  width: auto !important;
-  width: 96%;
+/* ---------- toolbox ----------- */
+div.dokuwiki div#sidebar div#toolbox {
+  padding-bottom: 0.3em;
 }
 
-/* ---------- Toolbox ----------- */
 div.dokuwiki div#toolbox ul {
   list-style: none;
   margin: 0;
-  clear: both;
 }
 
 div.dokuwiki div#toolbox a.login {
@@ -179,27 +230,4 @@ div.dokuwiki div#toolbox a.backlink {
 div.dokuwiki div#toolbox a.profile {
   background: transparent url(images/tool-profile.png) 0px 1px no-repeat;
   padding: 1px 0px 1px 18px;
-}
-
-div.dokuwiki div#bar__top a.create,
-div.dokuwiki div#bar__top a.edit {
-  background: __background__ url(images/tool-edit.png) 2px 1px no-repeat;
-  padding-left: 20px;
-}
-
-div.dokuwiki div#bar__top a.revisions {
-  background: __background__ url(images/tool-revisions.png) 2px 1px no-repeat;
-  padding-left:20px;
-}
-
-div.dokuwiki div#bar__top a.subscribe,
-div.dokuwiki div#bar__top a.unsubscribe {
-  background: __background__ url(images/tool-subscribe.png) 2px 2px no-repeat;
-  padding-left: 20px;
-}
-
-div.dokuwiki div#bar__top a.source,
-div.dokuwiki div#bar__top a.show {
-  background: __background__ url(images/tool-source.png) 2px 2px no-repeat;
-  padding-left: 20px;
 }
