@@ -112,6 +112,8 @@ require_once(DOKU_TPLINC.'tpl_functions.php');
 
       <?php tpl_actionlink('top')?>
 
+      <div class="clearer"></div>
+
     </div>
 
     <?php flush()?>

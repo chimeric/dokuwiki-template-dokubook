@@ -231,3 +231,7 @@ div.dokuwiki div#toolbox a.profile {
   background: transparent url(images/tool-profile.png) 0px 1px no-repeat;
   padding: 1px 0px 1px 18px;
 }
+
+div.dokuwiki a.top {
+  float: right;
+}
