@@ -20,6 +20,12 @@ div.dokuwiki div#dokubook_container {
   right: 10px;
 }
 
+div.dokuwiki div.info,
+div.dokuwiki div.success,
+div.dokuwiki div.error {
+  margin-left: 170px;
+}
+
 /* -------------- navigation ---------------------- */
 
 div.dokuwiki ul#top__nav {
