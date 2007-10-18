@@ -10,13 +10,11 @@ body {
 }
 
 div.dokuwiki {
-  font-family: sans-serif;
+  font-family: "Lucida Grande", Arial, Verdana, sans-serif;
 }
 
 div.dokuwiki div#dokubook_container {
   padding-bottom: 0.8em;
-  padding-top: 50px;
-  padding-right: 1em;
   position: absolute;
   left: 170px;
   right: 10px;
@@ -27,31 +25,26 @@ div.dokuwiki div#dokubook_container {
 div.dokuwiki ul#top__nav {
   list-style: none;
   margin: 0;
-  padding: 0;
-  padding-left: 10px;
+  padding: 0 0 0 10px;
   position: absolute;
-  top: 34px !important;
-  top: 71px;
-  left: 10px;
+  top: 34px;
 }
 
 div.dokuwiki ul#top__nav li {
-  margin: 0;
-  margin-right: 0.5em;
+  margin: 0 0.5em 0 0;
   float: left;
   padding: 0;
 }
 
 div.dokuwiki ul#top__nav li a {
-  padding-left: 0.3em;
-  padding-right: 0.3em;
   border-top: 1px solid __border__;
   border-left: 1px solid __border__;
   border-right: 1px solid __border__;
-  padding-bottom: 0;
+  padding: 0 0.3em 0 0.3em;
   margin: 0;
   height: 18px;
   float: left;
+  text-decoration: none;
 }
 
 div.dokuwiki ul#top__nav a.create,
@@ -90,13 +83,11 @@ div.dokuwiki div#sidebar .sidebar_box {
   border: 1px solid __border__;
   border-left: none;
   margin-bottom: 0.5em;
-  padding-left: 0.3em;
-  padding-top: 0.3em;
+  padding: 0.3em 0 0 0.3em;
   background: __background__;
 }
 
 div.dokuwiki div#sidebar img.logo {
-  margin:0;
   padding:0;
   float: none;
   margin: 10px;
@@ -123,17 +114,12 @@ div.dokuwiki div#sidebar div#login div.user {
 div.dokuwiki div#sidebar a.action {
   display: block;
   background: url(images/bullet.gif) no-repeat;
-  padding-left: 12px;
-  padding-top: 1px;
-  height: 16px;
   margin-left: 0.4em;
 }
 
 div.dokuwiki div#sidebar .button {
   float: none;
-  margin-top: 0.4em;
-  margin-bottom: 0.4em;
-  margin-left: 0.1em;
+  margin: 0.4em 0 0.4em 0.1em;
 }
 
 div.dokuwiki div#sidebar h1,
@@ -145,16 +131,23 @@ div.dokuwiki div#sidebar h5 {
   border: none;
 }
 
-/* the document */
+/* -------------- dokucument ---------------------- */
 div.dokuwiki div.page {
+  line-height: 160%;
   margin: 0;
   border: 1px solid __border__;
-  padding: 1em;
+  padding: 1em; 
   background: __background__;
 }
 
 div.dokuwiki div.breadcrumbs {
-  margin-bottom: 1em;
+  margin-bottom: 10px;
+  clear: both;
+}
+
+div.dokuwiki pre.code,
+div.dokuwiki pre.file {
+  margin-right: 0.1em;
 }
 
 /* -------------- search -------------------------- */
@@ -166,10 +159,10 @@ div.dokuwiki form#dw__search input.edit {
   width: 142px;
 }
 
-
 /* ---------- table of contents ------------------- */
 div.dokuwiki div.toc {
-  margin-top: 13px;
+  margin-top: 16px;
+  line-height: 100%;
 }
 
 /* ---------- AJAX quicksearch -------------------- */
@@ -178,13 +171,16 @@ div.dokuwiki div.ajax_qsearch {
 }
 
 /* --------------- additional --------------------- */
+div.dokuwiki div#footer {
+  padding: 1em;
+  margin: 10px 0 1em 0;
+  background: __background__;
+  border: 1px solid __border__;
+}
+
 div.dokuwiki div.footerinc {
   padding: 1em;
-  margin-bottom: 1em;
-  margin-top: 1em;
-  border: 1px solid __border__;
-  border: 1px solid __border__;
-  background: __background__;
+  margin: 10px 0 1em 0;
 }
 
 /* ---------- toolbox ----------- */

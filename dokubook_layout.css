@@ -4,12 +4,15 @@
  * @author:     Michael Klier <chi@chimeric.de>
  * @homepage:   http://www.chimeric.de
  */
+div.dokuwiki div.header {
+  height: 50px;
+}
 
 div.dokuwiki div.header .logo {
   float: none;
   position: absolute;
-  right: 0.6em;
-  top: 0.3em;
+  right: 10px;
+  top: 10px;
 }
 
 div.dokuwiki div.header .logo a {

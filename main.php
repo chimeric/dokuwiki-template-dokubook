@@ -46,7 +46,7 @@ require_once(DOKU_TPLINC.'tpl_functions.php');
     <?php } ?>
     {
       border-color: #fabd23;
-      border-bottom: 2px solid #fff;
+      border-bottom: 1px solid #fff;
       font-weight: bold;
     }
   </style>
@@ -79,8 +79,6 @@ require_once(DOKU_TPLINC.'tpl_functions.php');
         <li><?php tpl_actionlink('history')?></li>
         <li><?php tpl_actionlink('subscribe')?></li>
       </ul>
-
-      <div class="clearer"></div>
 
     </div>
 
