@@ -118,6 +118,8 @@ require_once(DOKU_TPLINC.'tpl_functions.php');
 
     <div class="clearer"></div>
 
+    <?php tpl_footer() ?>
+
     <div class="stylefoot">
       <?php /*old includehook*/ @include(dirname(__FILE__).'/pagefooter.html')?>
     </div>

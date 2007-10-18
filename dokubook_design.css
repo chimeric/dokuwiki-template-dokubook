@@ -131,13 +131,17 @@ div.dokuwiki div#sidebar h5 {
   border: none;
 }
 
-/* -------------- dokucument ---------------------- */
+/* -------------- document ---------------------- */
 div.dokuwiki div.page {
   line-height: 160%;
   margin: 0;
   border: 1px solid __border__;
   padding: 1em; 
   background: __background__;
+}
+
+div.dokuwiki h3 {
+  font-weight: normal;
 }
 
 div.dokuwiki div.breadcrumbs {
@@ -176,6 +180,11 @@ div.dokuwiki div#footer {
   margin: 10px 0 1em 0;
   background: __background__;
   border: 1px solid __border__;
+  text-align: center;
+}
+
+div.dokuwiki div#footer input.button {
+  float: none;
 }
 
 div.dokuwiki div.footerinc {

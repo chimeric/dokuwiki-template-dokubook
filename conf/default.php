@@ -6,6 +6,7 @@
  * @author:     Michael Klier <chi@chimeric.de>
  */
 
-$conf['pagename']   = 'navigation';     // the pagename for the navigation pages
-$conf['closedwiki'] = false;            // set to true if you run a closed wiki 
+$conf['sb_pagename'] = 'navigation';    // the pagename for the navigation pages
+$conf['ft_pagename'] = 'footer';        // the pagename for the footer page
+$conf['closedwiki']  = false;           // set to true if you run a closed wiki 
 ?>

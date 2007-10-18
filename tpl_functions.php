@@ -5,8 +5,9 @@
  * @license:    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * @author:     Michael Klier <chi@chimeric.de>
  */
-
-if(!defined('DW_LF')) define('DW_LF',"\n");
+// must be run within DokuWiki
+if(!defined('DOKU_INC')) die();
+if(!defined('DOKU_LF')) define('DOKU_LF', "\n");
 
 // load language files
 require_once(DOKU_TPLINC.'lang/en/lang.php');
@@ -41,7 +42,7 @@ function tpl_logo() {
     }
 
     $out .= '<a href="' . DOKU_BASE . '" name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[ALT+H]">';
-    $out .= '  <img class="logo" src="' . $logo . '" alt="' . $conf['title'] . '" /></a>' . DW_LF;
+    $out .= '  <img class="logo" src="' . $logo . '" alt="' . $conf['title'] . '" /></a>' . DOKU_LF;
 
     print ($out);
 }
@@ -57,22 +58,22 @@ function tpl_sidebar() {
     global $INFO;
 
     $svID  = cleanID($ID);
-    $navpn = tpl_getConf('pagename');
+    $navpn = tpl_getConf('sb_pagename');
     $path  = explode(':',$svID);
     $found = false;
     $sb    = '';
 
     if(tpl_getConf('closedwiki') && empty($INFO['userinfo'])) {
-        print '<span class="sb_label">' . $lang['toolbox'] . '</span>' . DW_LF;
-        print '<div id="toolbox" class="sidebar_box">' . DW_LF;
+        print '<span class="sb_label">' . $lang['toolbox'] . '</span>' . DOKU_LF;
+        print '<div id="toolbox" class="sidebar_box">' . DOKU_LF;
         tpl_actionlink('login');
-        print '</div>' . DW_LF;
+        print '</div>' . DOKU_LF;
         return;
     }
 
     // main navigation
-    print '<span class="sb_label">' . $lang['navigation'] . '</span>' . DW_LF;
-    print '<div id="navigation" class="sidebar_box">' . DW_LF;
+    print '<span class="sb_label">' . $lang['navigation'] . '</span>' . DOKU_LF;
+    print '<div id="navigation" class="sidebar_box">' . DOKU_LF;
 
     while(!$found && count($path) > 0) {
         $sb = implode(':', $path) . ':' . $navpn;
@@ -83,45 +84,81 @@ function tpl_sidebar() {
     if(!$found && @file_exists(wikiFN($navpn))) $sb = $navpn;
 
     if(@file_exists(wikiFN($sb)) && auth_quickaclcheck($sb) >= AUTH_READ) {
-        print p_sidebar_xhtml($sb);
+        print p_dokubook_xhtml($sb);
     } else {
         print p_index_xhtml(cleanID($svID));
     }
 
-    print '</div>' . DW_LF;
+    print '</div>' . DOKU_LF;
 
     // generate the searchbox
-    print '<span class="sb_label">' . strtolower($lang['btn_search']) . '</span>' . DW_LF;
-    print '<div id="search">' . DW_LF;
+    print '<span class="sb_label">' . strtolower($lang['btn_search']) . '</span>' . DOKU_LF;
+    print '<div id="search">' . DOKU_LF;
     tpl_searchform();
-    print '</div>' . DW_LF;
+    print '</div>' . DOKU_LF;
 
     // generate the toolbox
-    print '<span class="sb_label">' . $lang['toolbox'] . '</span>' . DW_LF;
-    print '<div id="toolbox" class="sidebar_box">' . DW_LF;
+    print '<span class="sb_label">' . $lang['toolbox'] . '</span>' . DOKU_LF;
+    print '<div id="toolbox" class="sidebar_box">' . DOKU_LF;
     tpl_actionlink('admin');
     tpl_actionlink('index');
     tpl_actionlink('recent');
     tpl_actionlink('backlink');
     tpl_actionlink('profile');
     tpl_actionlink('login');
-    print '</div>' . DW_LF;
+    print '</div>' . DOKU_LF;
+
+    // restore ID just in case
+    $Id = $svID;
 }
 
 /**
- * removes the TOC of the sidebar-pages and shows a edit-button if user has enough rights
+ * prints a custom page footer
+ *
+ * @author Michael Klier <chi@chimeric.de>
+ */
+function tpl_footer() {
+    global $ID;
+
+    $svID  = $ID;
+    $ftpn  = tpl_getConf('ft_pagename');
+    $path  = explode(':',$svID);
+    $found = false;
+    $ft    = '';
+
+    while(!$found && count($path) > 0) {
+        $ft = implode(':', $path) . ':' . $ftpn;
+        $found =  @file_exists(wikiFN($ft));
+        array_pop($path);
+    }
+
+    if(!$found && @file_exists(wikiFN($ftpn))) $ft = $ftpn;
+
+    if(@file_exists(wikiFN($ft)) && auth_quickaclcheck($ft) >= AUTH_READ) {
+        print '<div id="footer">' . DOKU_LF;
+        print p_dokubook_xhtml($ft);
+        print '</div>' . DOKU_LF;
+    }
+
+    // restore ID just in case
+    $ID = $svID;
+}
+
+/**
+ * removes the TOC of the sidebar-pages and shows 
+ * a edit-button if user has enough rights
  * 
  * @author Michael Klier <chi@chimeric.de>
  */
-function p_sidebar_xhtml($sb) {
-    $data = p_wiki_xhtml($sb,'',false);
-    if(auth_quickaclcheck($sb) >= AUTH_EDIT) {
-        $data .= '<div class="secedit">' . html_btn('secedit',$sb,'',array('do'=>'edit','rev'=>'','post')) . '</div>';
+function p_dokubook_xhtml($wp) {
+    $data = p_wiki_xhtml($wp,'',false);
+    if(auth_quickaclcheck($wp) >= AUTH_EDIT) {
+        $data .= '<div class="secedit">' . html_btn('secedit',$wp,'',array('do'=>'edit','rev'=>'','post')) . '</div>';
     }
     // strip TOC
     $data = preg_replace('/<div class="toc">.*?(<\/div>\n<\/div>)/s', '', $data);
     // replace headline ids for XHTML compliance
-    $data = preg_replace('/(<h.*?><a.*?id=")(.*?)(">.*?<\/a><\/h.*?>)/','\1sb_'.$pos.'_\2\3', $data);
+    $data = preg_replace('/(<h.*?><a.*?id=")(.*?)(">.*?<\/a><\/h.*?>)/','\1sb_\2\3', $data);
     return ($data);
 }
 

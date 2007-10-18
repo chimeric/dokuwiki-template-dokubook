@@ -6,6 +6,7 @@
  * @author:     Michael Klier <chi@chimeric.de>
  */
 
-$meta['pagename']   = array('string', '_pattern' => '#[a-z]*');
-$meta['closedwiki'] = array('onoff');
+$meta['sb_pagename'] = array('string', '_pattern' => '#[a-z]*');
+$meta['ft_pagename'] = array('string', '_pattern' => '#[a-z]*');
+$meta['closedwiki']  = array('onoff');
 ?>
