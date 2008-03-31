@@ -23,6 +23,10 @@ CSS=$(DIST_DIR)/dokubook_design.css \
 	$(DIST_DIR)/rtl.css
 # }}}
 
+# {{{ SCRIPTS
+SCRIPTS=${DIST_DIR}/script.js
+# }}}
+
 # {{{ STYLE_INI
 STYLE_INI=$(DIST_DIR)/style.ini \
 		  $(DIST_DIR)/style.ini.dist
@@ -85,7 +89,7 @@ LANG=$(DIST_DIR)/lang/en/settings.php \
 	 $(DIST_DIR)/lang/en/lang.php
 # }}}
 
-DIST_FILES= $(DOCS) $(CSS) $(HTML) $(PHP) $(STYLE_INI) $(IMAGES) $(CONF) $(LANG)
+DIST_FILES= $(DOCS) $(CSS) ${SCRIPTS} $(HTML) $(PHP) $(STYLE_INI) $(IMAGES) $(CONF) $(LANG)
 
 dist:
 	tar czf $(DIST_NAME).tgz $(DIST_FILES)
