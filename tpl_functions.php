@@ -189,7 +189,10 @@ function p_index_xhtml($ns) {
 
   $data = array();
   search($data,$conf['datadir'],'search_index',array('ns' => $ns));
+
+  print '<div id="sb__index__tree">' . DOKU_LF;
   print html_buildlist($data,'idx','_html_list_index','html_li_index');
+  print '</div>' . DOKU_LF;
 }
 
 /**
