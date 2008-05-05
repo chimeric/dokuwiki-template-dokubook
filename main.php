@@ -75,9 +75,18 @@ require_once(DOKU_TPLINC.'tpl_functions.php');
       </div>
 
       <ul id="top__nav">
-        <li><?php tpl_actionlink('edit')?></li>
-        <li><?php tpl_actionlink('history')?></li>
-        <li><?php tpl_actionlink('subscribe')?></li>
+        <?php
+            foreach(array('edit', 'history', 'subscribe', 'subscribens') as $act) {
+                ob_start();
+                print '<li>' . DOKU_LF;
+                if(tpl_actionlink($act)) {
+                    print '</li>' . DOKU_LF;
+                    ob_end_flush();
+                } else {
+                    ob_end_clean();
+                }
+            }
+        ?>
       </ul>
 
     </div>

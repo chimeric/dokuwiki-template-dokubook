@@ -65,7 +65,9 @@ div.dokuwiki ul#top__nav a.revisions {
 }
 
 div.dokuwiki ul#top__nav a.subscribe,
-div.dokuwiki ul#top__nav a.unsubscribe {
+div.dokuwiki ul#top__nav a.subscribens,
+div.dokuwiki ul#top__nav a.unsubscribe,
+div.dokuwiki ul#top__nav a.unsubscribens {
   background: __background__ url(images/tool-subscribe.png) 2px 2px no-repeat;
   padding-left: 20px;
 }
