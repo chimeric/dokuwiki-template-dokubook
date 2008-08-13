@@ -8,3 +8,4 @@
 addInitEvent(function(){
     index.treeattach($('sb__index__tree'));
 });
+
