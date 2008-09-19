@@ -13,17 +13,18 @@ div.dokuwiki {
   font-family: "Lucida Grande", Arial, Verdana, sans-serif;
 }
 
-div.dokuwiki div#dokubook_container {
+div.dokuwiki div#dokubook_container_left {
   padding-bottom: 0.8em;
   position: absolute;
   left: 170px;
   right: 10px;
 }
 
-div.dokuwiki div.info,
-div.dokuwiki div.success,
-div.dokuwiki div.error {
-  margin-left: 170px;
+div.dokuwiki div#dokubook_container_right {
+  padding-bottom: 0.8em;
+  position: absolute;
+  right: 170px;
+  left: 10px;
 }
 
 /* -------------- navigation ---------------------- */
@@ -43,9 +44,8 @@ div.dokuwiki ul#top__nav li {
 }
 
 div.dokuwiki ul#top__nav li a {
-  border-top: 1px solid __border__;
-  border-left: 1px solid __border__;
-  border-right: 1px solid __border__;
+  border: 1px solid __border__;
+  border-bottom: none;
   padding: 0 0.3em 0 0.3em;
   margin: 0;
   height: 18px;
@@ -80,61 +80,81 @@ div.dokuwiki ul#top__nav a.show {
 
 /* -------------- sidebar ------------------------- */
 
-div.dokuwiki div#sidebar {
+div.dokuwiki div#sidebar_left {
   position: absolute;
   top: 0;
   left: 0;
   width: 160px;
 }
 
-div.dokuwiki div#sidebar .sidebar_box {
+div.dokuwiki div#sidebar_right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 160px;
+}
+
+div.dokuwiki div.sidebar .sidebar_box {
   border: 1px solid __border__;
-  border-left: none;
   margin-bottom: 0.5em;
   padding: 0.3em 0 0 0.3em;
   background: __background__;
 }
 
-div.dokuwiki div#sidebar img.logo {
+div.dokuwiki div#sidebar_left .sidebar_box {
+  border-left: none;
+}
+
+div.dokuwiki div#sidebar_right .sidebar_box {
+  border-right: none;
+}
+
+div.dokuwiki div.sidebar img.logo {
   padding:0;
   float: none;
   margin: 10px;
 }
 
-div.dokuwiki div#sidebar .sb_label {
+div.dokuwiki div.sidebar .sb_label {
   padding-left: 0.4em;
   font-size: 90%;
 }
 
-div.dokuwiki div#sidebar div#search {
+div.dokuwiki div.sidebar div#search {
   font-size: 100%;
   border: 1px solid __border__;
-  border-left: none;
   margin-bottom: 0.5em;
   background: __background__;
   padding-left: 0.4em;
 }
 
-div.dokuwiki div#sidebar div#login div.user {
+div.dokuwiki div#sidebar_left div#search {
+  border-left: none;
+}
+
+div.dokuwiki div#sidebar_right div#search {
+  border-right: none;
+}
+div.dokuwiki div.sidebar div#login div.user {
   font-size: 40%;
 }
 
-div.dokuwiki div#sidebar a.action {
+div.dokuwiki div.sidebar a.action {
   display: block;
   background: url(images/bullet.gif) no-repeat;
   margin-left: 0.4em;
 }
 
-div.dokuwiki div#sidebar .button {
+div.dokuwiki div.sidebar .button {
   float: none;
   margin: 0.4em 0 0.4em 0.1em;
 }
 
-div.dokuwiki div#sidebar h1,
-div.dokuwiki div#sidebar h2,
-div.dokuwiki div#sidebar h3,
-div.dokuwiki div#sidebar h4,
-div.dokuwiki div#sidebar h5 {
+div.dokuwiki div.sidebar h1,
+div.dokuwiki div.sidebar h2,
+div.dokuwiki div.sidebar h3,
+div.dokuwiki div.sidebar h4,
+div.dokuwiki div.sidebar h5 {
   font-size: 80%;
   border: none;
 }
@@ -201,7 +221,7 @@ div.dokuwiki div.footerinc {
 }
 
 /* ---------- toolbox ----------- */
-div.dokuwiki div#sidebar div#toolbox {
+div.dokuwiki div.sidebar div#toolbox {
   padding-bottom: 0.3em;
 }
 

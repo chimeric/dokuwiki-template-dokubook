@@ -57,12 +57,12 @@ require_once(DOKU_TPLINC.'tpl_functions.php');
 <div class="dokuwiki">
   <?php html_msgarea()?>
 
-  <div id="sidebar">
+  <div id="sidebar_<?php echo tpl_getConf('sb_position')?>" class="sidebar">
     <?php tpl_logo()?> 
     <?php tpl_sidebar()?>
   </div>
 
-  <div id="dokubook_container">
+  <div id="dokubook_container_<?php echo tpl_getConf('sb_position')?>">
 
     <div class="stylehead">
 
