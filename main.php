@@ -1,6 +1,6 @@
 <?php
 /**
- * DokuWiki Monobook Light Template
+ * DokuWiki Template DokuBook
  *
  * This is the template you need to change for the overall look
  * of DokuWiki.
@@ -8,7 +8,7 @@
  * You should leave the doctype at the very top - It should
  * always be the very first line of a document.
  *
- * @link   http://wiki.splitbrain.org/wiki:tpl:templates
+ * @link   http://wiki.splitbrain.org/template:dokubook
  * @author Andreas Gohr <andi@splitbrain.org>
  * @author Michael Klier <chi@chimeric.de>
  */
@@ -134,6 +134,10 @@ require_once(DOKU_TPLINC.'tpl_functions.php');
     </div>
 
     <?php /*old includehook*/ @include(dirname(__FILE__).'/footer.html')?>
+
+	<div class="license">
+      <?php tpl_license(false);?>
+	</div>
 
   </div>
 

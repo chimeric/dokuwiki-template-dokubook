@@ -26,3 +26,7 @@ div.dokuwiki div.user {
 div.dokuwiki div.doc {
   float: left;
 }
+
+div.dokuwiki div.license {
+  text-align: center;
+}
