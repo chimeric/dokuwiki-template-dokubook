@@ -54,7 +54,8 @@ div.dokuwiki ul#top__nav li a {
 }
 
 div.dokuwiki ul#top__nav a.create,
-div.dokuwiki ul#top__nav a.edit {
+div.dokuwiki ul#top__nav a.edit,
+div.dokuwiki ul#top__nav a.npd {
   background: __background__ url(images/tool-edit.png) 2px 1px no-repeat;
   padding-left: 20px;
 }
