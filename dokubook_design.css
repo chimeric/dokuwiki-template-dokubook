@@ -28,7 +28,6 @@ div.dokuwiki div#dokubook_container_right {
 }
 
 /* -------------- navigation ---------------------- */
-
 div.dokuwiki ul#top__nav {
   list-style: none;
   margin: 0;
@@ -80,7 +79,6 @@ div.dokuwiki ul#top__nav a.show {
 }
 
 /* -------------- sidebar ------------------------- */
-
 div.dokuwiki div#sidebar_left {
   position: absolute;
   top: 0;
@@ -100,6 +98,11 @@ div.dokuwiki div.sidebar .sidebar_box {
   margin-bottom: 0.5em;
   padding: 0.3em 0 0 0.3em;
   background: __background__;
+}
+
+div.dokuwiki div.sidebar .sidebar_box ul,
+div.dokuwiki div.sidebar .sidebar_box ol {
+  margin-left: 1.5em;
 }
 
 div.dokuwiki div#sidebar_left .sidebar_box {
@@ -194,7 +197,7 @@ div.dokuwiki form#dw__search input.edit {
 
 /* ---------- table of contents ------------------- */
 div.dokuwiki div.toc {
-  margin-top: 16px;
+  margin-top: 13px;
   line-height: 100%;
 }
 
