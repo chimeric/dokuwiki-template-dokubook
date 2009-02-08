@@ -27,6 +27,13 @@ div.dokuwiki div.doc {
   float: left;
 }
 
-div.dokuwiki div.license {
-  text-align: center;
+div.dokuwiki div.footerinc div.license {
+  display: inline;
+  padding: 0;
+  font-size: 100%;
+}
+
+div.dokuwiki div.footerinc div.license img {
+  float: none;
+  margin: 0;
 }

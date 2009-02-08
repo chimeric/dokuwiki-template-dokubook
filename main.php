@@ -141,10 +141,6 @@ require_once(DOKU_TPLINC.'tpl_functions.php');
 
     <?php /*old includehook*/ @include(dirname(__FILE__).'/footer.html')?>
 
-	<div class="license">
-      <?php tpl_license(false);?>
-	</div>
-
   </div>
 
 </div>
