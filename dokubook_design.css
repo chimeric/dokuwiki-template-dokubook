@@ -78,6 +78,11 @@ div.dokuwiki ul#top__nav a.show {
   padding-left: 20px;
 }
 
+div.dokuwiki ul#top__nav a.revert {
+  background: __background__ url(images/tool-revert.png) 2px 2px no-repeat;
+  padding-left: 20px;
+}
+
 /* -------------- sidebar ------------------------- */
 div.dokuwiki div#sidebar_left {
   position: absolute;

@@ -11,6 +11,8 @@ dokubook_layout.css = screen
 design.css     = screen
 dokubook_design.css = screen
 style.css      = screen
+_admin.css     = screen
+_linkwiz.css   = screen
 
 media.css      = screen
 

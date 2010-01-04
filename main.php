@@ -16,6 +16,7 @@
 // must be run from within DokuWiki
 if (!defined('DOKU_INC')) die();
 require_once(DOKU_TPLINC.'tpl_functions.php');
+global $REV;
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -37,12 +38,22 @@ require_once(DOKU_TPLINC.'tpl_functions.php');
 
   <!-- change link borders dynamically -->
   <style type="text/css">
-    <?php if($ACT == 'show' || $ACT == 'edit') { ?>
-    div.dokuwiki ul#top__nav a.edit,
-    div.dokuwiki ul#top__nav a.show,
-    div.dokuwiki ul#top__nav a.source
-    <?php } else { ?>
-    div.dokuwiki ul#top__nav a.<?php echo $ACT;?>
+    <?php 
+    if($ACT == 'show' || $ACT == 'edit') { 
+        if($ACT == 'show' && $INFO['ismanager'] && actionOK('revert') && !empty($REV)) {
+    ?>
+        div.dokuwiki ul#top__nav a.revert
+    <?php 
+        } else {
+    ?>
+        div.dokuwiki ul#top__nav a.edit,
+        div.dokuwiki ul#top__nav a.show,
+        div.dokuwiki ul#top__nav a.source,
+        div.dokuwiki ul#top__nav a.restore
+    <?php 
+        }
+    } else { ?>
+        div.dokuwiki ul#top__nav a.<?php echo $ACT;?>
     <?php } ?>
     {
       border-color: #fabd23;
@@ -82,14 +93,23 @@ require_once(DOKU_TPLINC.'tpl_functions.php');
                     print '<li>' . $npb . '</li>' . DOKU_LF;
                 }
             }
-            foreach(array('edit', 'history', 'subscribe', 'subscribens') as $act) {
+            foreach(array('revert', 'edit', 'history', 'subscribe', 'subscribens') as $act) {
                 ob_start();
                 print '<li>';
-                if(tpl_actionlink($act)) {
-                    print '</li>' . DOKU_LF;
-                    ob_end_flush();
+                if($act == 'revert' && !empty($REV)) {
+                    if(tpl_actionlink($act)) {
+                        print '</li>' . DOKU_LF;
+                        ob_end_flush();
+                    } else {
+                        ob_end_clean();
+                    }
                 } else {
-                    ob_end_clean();
+                    if(tpl_actionlink($act)) {
+                        print '</li>' . DOKU_LF;
+                        ob_end_flush();
+                    } else {
+                        ob_end_clean();
+                    }
                 }
             }
         ?>
