@@ -127,6 +127,7 @@ div.dokuwiki div.sidebar img.logo {
 div.dokuwiki div.sidebar .sb_label {
   padding-left: 0.4em;
   font-size: 90%;
+  clear: both;
 }
 
 div.dokuwiki div.sidebar div#search {
@@ -156,7 +157,7 @@ div.dokuwiki div.sidebar a.action {
 
 div.dokuwiki div.sidebar .button {
   float: none;
-  margin: 0.4em 0 0.4em 0.1em;
+  margin: -0.3em 0.2em 0.1em 0.1em !important;
 }
 
 div.dokuwiki div.sidebar h1,
