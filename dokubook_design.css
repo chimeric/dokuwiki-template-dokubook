@@ -27,6 +27,13 @@ div.dokuwiki div#dokubook_container_right {
   left: 10px;
 }
 
+/* -------------- notifications ------------------- */
+div.dokuwiki div.info,
+div.dokuwiki div.success,
+div.dokuwiki div.error {
+    margin-left: 170px;
+}
+
 /* -------------- navigation ---------------------- */
 div.dokuwiki ul#top__nav {
   list-style: none;
