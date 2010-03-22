@@ -27,6 +27,9 @@ function tpl_logo() {
     $out = '';
 
     switch(true) {
+        case(tpl_getConf('logo')):
+            $logo = tpl_getconf('logo');
+            break;
         case(@file_exists(DOKU_TPLINC.'images/logo.jpg')):
             $logo = DOKU_TPL.'images/logo.jpg';
             break;
